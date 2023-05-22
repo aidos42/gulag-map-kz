@@ -2,9 +2,44 @@ html, body {
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: #333333;
-    max-width: 1024px;
+    background-color: #0D1117;
 }
+
+header {
+    background-color: #161B22;
+}
+
+.logo {
+    float:left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #161B22;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #cccccc;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #DC143C;
+  }
 
 h1 {
     text-align: center;
@@ -20,7 +55,7 @@ h1 {
 
 .footer {
     margin-top: 30px;
-    padding-top: 30px;
+    padding-top: 5px;
     border-top: solid 1px #cccccc;
     color: #cccccc;
   }

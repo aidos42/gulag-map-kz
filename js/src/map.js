@@ -14,7 +14,7 @@ const AD_ICON_ANCHOR = [20, 40];
 const karlag = {
   location: INITIAL_COORDS,
   title: 'Карлаг',
-  region: 'Тестовое значение',
+  region: 'Карагандинская область',
   opened: '1931 г.',
   closed: '1959 г.',
   link: 'http://old.memo.ru/history/nkvd/gulag/r3/r3-190.htm',

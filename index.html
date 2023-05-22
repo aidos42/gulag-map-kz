@@ -3,21 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <title>Карта исправительно-трудовых лагерей (ГУЛАГ) на территории Казахстана</title>
   </head>
   <body>
+    <header>
+      <img class="logo" src="img/icon.svg" width="60px" height="40px" alt="Логотип сайта"/>
+      <nav>
+        <ul>
+          <li class="active"><a href="index.html">Интерактивная карта</a></li>
+          <li><a href="/articles.html">Материалы по лагерям</a></li>
+          <li><a href="/about.html">О проекте</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <h1>Карта исправительно-трудовых лагерей (ГУЛАГ) на территории Казахстана</h1>
       <div id="map-canvas"></div>
     </main>
 
     <footer class="footer">
-        <p>Материалы подготовлены и предоставлены: <a href="mailto: zauresh63@mail.ru">Сактаганова З.Г.</a></p>
-        <p>Техническая реализация: <a href="https://github.com/aidos42">Смагулов А.Ж.</a></p>
-      </div>
+        <p>© 2023 <a href="mailto: zauresh63@mail.ru">Сактаганова З.Г.</a>, <a href="https://github.com/aidos42">Смагулов А.Ж.</a></p>
     </footer>
 
     <template id="card">
