@@ -14,5 +14,39 @@
       <div id="map-canvas"></div>
     </main>
 
+    <footer class="footer">
+        <p>Материалы подготовлены и предоставлены: <a href="mailto: zauresh63@mail.ru">Сактаганова З.Г.</a></p>
+        <p>Техническая реализация: <a href="https://github.com/aidos42">Смагулов А.Ж.</a></p>
+      </div>
+    </footer>
+
+    <template id="card">
+      <table class="popup infobox">
+        <tbody>
+          <tr>
+            <th colspan="2" scope="colgroup" class="popup-title infobox-above" style="">Карлаг</th>
+          </tr>
+          <tr>
+            <th scope="row" class="plainlist">Местоположение</th>
+            <td class="popup-location plainlist">Карагандинская область</td>
+          </tr>
+          <tr>
+            <th scope="row" class="plainlist">Открытие</th>
+            <td class="popup-date-opened plainlist">1931 г.</td>
+          </tr>
+          <tr>
+            <th scope="row" class="plainlist">Закрытие</th>
+            <td class="popup-date-closed plainlist">1959 г.</td>
+          </tr>
+          <tr>
+            <th scope="row" class="plainlist">Ссылка на справочный материал</th>
+            <td class="popup-link plainlist"><a href="http://old.memo.ru/history/nkvd/gulag/r3/r3-190.htm">Мемориал</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </template>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>
