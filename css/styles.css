@@ -14,32 +14,43 @@ header {
   float: left;
 }
 
-ul {
-  list-style-type: none;
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #161B22;
+  justify-content: flex-start;
 }
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: #cccccc;
+.menu-item {
+  width: 10em;
   text-align: center;
+  display: block;
   padding: 14px 16px;
+}
+
+.menu-item a {
+  color: #cccccc;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+.menu-item:hover {
+  background-color: #af2843;
 }
 
 .active {
   background-color: #DC143C;
+}
+
+@media (max-width: 600px) {
+  .menu {
+     flex-direction: column;
+  }
+  .menu-item {
+     flex: none;
+     width: 100%;
+  }
 }
 
 h1 {
