@@ -17,7 +17,7 @@ const karlag = {
   region: 'Карагандинская область',
   opened: '1931 г.',
   closed: '1959 г.',
-  link: 'http://old.memo.ru/history/nkvd/gulag/r3/r3-190.htm',
+  link: 'https://lib.memo.ru/rubric/957',
 };
 
 const map = L.map('map-canvas');
