@@ -107,3 +107,8 @@ h1 {
   border: none !important;
   box-shadow: none !important;
 }
+
+.source, .source-title {
+  padding: 10px;
+  color: #cccccc;
+}
