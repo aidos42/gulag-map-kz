@@ -66,6 +66,6 @@ const loadMap = () => {
   }).addTo(map);
 };
 
-createCardMarker(karlag);
+createCardMarker(karlag).catch((error) => console.log(error));
 
 export default loadMap;
