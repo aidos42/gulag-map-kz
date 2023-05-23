@@ -1,96 +1,98 @@
-html, body {
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    background-color: #0D1117;
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #0D1117;
 }
 
 header {
-    background-color: #161B22;
+  background-color: #161B22;
 }
 
 .logo {
-    float:left;
+  float: left;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #161B22;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: #cccccc;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: #111;
-  }
-
-  .active {
-    background-color: #DC143C;
-  }
-
-h1 {
-    text-align: center;
-    color: #cccccc;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: solid 1px #cccccc;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #161B22;
 }
 
-#map-canvas { 
-    height: 1000px;
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #cccccc;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #DC143C;
+}
+
+h1 {
+  text-align: center;
+  color: #cccccc;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #cccccc;
+}
+
+#map-canvas {
+  height: 1000px;
 }
 
 .footer {
-    margin-top: 30px;
-    padding-top: 5px;
-    border-top: solid 1px #cccccc;
-    color: #cccccc;
-  }
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: solid 1px #cccccc;
+  color: #cccccc;
+}
 
 .infobox {
-    border: 1px solid #a2a9b1;
-    background: #f8f9fa;
-    margin-bottom: .5em;
-    margin-left: 1em;
-    padding: .4em;
-    float: right;
-    clear: right;
-    font-size: 90%;
-    width: 23em;
-    vertical-align: middle;
-    text-align: left;
-    line-height: 1.5em;
-    border-collapse: separate;
-    border-spacing: 2px;
+  border: 1px solid #a2a9b1;
+  background: #f8f9fa;
+  margin-bottom: .5em;
+  margin-left: 1em;
+  padding: .4em;
+  float: right;
+  clear: right;
+  font-size: 90%;
+  width: 23em;
+  vertical-align: middle;
+  text-align: left;
+  line-height: 1.5em;
+  border-collapse: separate;
+  border-spacing: 2px;
 }
 
 .infobox-above {
-    background: #cfe3ff;
-    font-size: 120%;
-    text-align: center;
+  background: #DC143C;
+  color: white;
+  font-size: 120%;
+  text-align: center;
 }
 
 .leaflet-popup-content-wrapper {
-    background: rgba(0, 0, 0, 0) !important;
-    border: none !important;
-    box-shadow: none !important;
+  background: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .leaflet-popup-tip {
-    background: rgba(0, 0, 0, 0) !important;
-    border: none !important;
-    box-shadow: none !important;
+  background: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+  box-shadow: none !important;
 }

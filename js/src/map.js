@@ -63,4 +63,4 @@ const loadMap = () => {
 
 createCardMarker(karlag);
 
-export { loadMap };
+export default loadMap;
