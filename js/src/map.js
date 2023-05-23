@@ -22,34 +22,39 @@ const karlag = {
 
 const map = L.map('map-canvas');
 
-const addMarkersGroup = L.layerGroup().addTo(map);
-const adMarkerIcon = L.icon({
+const campMarkersGroup = L.layerGroup().addTo(map);
+const campMarkerIcon = L.icon({
   iconUrl: '../../img/pin.svg',
   iconSize: AD_ICON_SIZE,
   iconAnchor: AD_ICON_ANCHOR,
 });
 
-const createCardMarker = (data) => {
+const createCardMarker = async (data) => {
   const { lat, lng } = data.location;
 
-  const adMarker = L.marker(
+  const campMarker = L.marker(
     {
       lat,
       lng,
     },
     {
-      adMarkerIcon,
+      adMarkerIcon: campMarkerIcon,
     },
   );
 
-  adMarker
-    .addTo(addMarkersGroup)
+  const response = await fetch('./js/src/kazakhstan.json');
+  const kazakhstanMap = await response.json();
+
+  campMarker
+    .addTo(campMarkersGroup)
     .bindPopup(
       renderCard(data),
       {
         keepInView: true,
       },
     );
+
+  L.geoJson(kazakhstanMap).addTo(map);
 };
 
 const loadMap = () => {
