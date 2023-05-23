@@ -7,8 +7,17 @@ const INITIAL_COORDS = {
   lng: 72.68178662327088,
 };
 const MAP_ZOOM = 10;
-const AD_ICON_SIZE = [80, 80];
-const AD_ICON_ANCHOR = [20, 40];
+
+const getCampMarkerIcon = (color) => L.icon({
+  iconUrl:
+      `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+  shadowUrl:
+      'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 // TODO: Заменить на полноценные данные.
 const karlag = {
@@ -18,27 +27,18 @@ const karlag = {
   opened: '1931 г.',
   closed: '1959 г.',
   link: 'https://lib.memo.ru/rubric/957',
+  markerColor: 'violet',
 };
 
 const map = L.map('map-canvas');
 
 const campMarkersGroup = L.layerGroup().addTo(map);
-const campMarkerIcon = L.icon({
-  iconUrl: '../../img/pin.svg',
-  iconSize: AD_ICON_SIZE,
-  iconAnchor: AD_ICON_ANCHOR,
-});
 
 const createCardMarker = async (data) => {
-  const { lat, lng } = data.location;
-
   const campMarker = L.marker(
+    data.location,
     {
-      lat,
-      lng,
-    },
-    {
-      adMarkerIcon: campMarkerIcon,
+      icon: getCampMarkerIcon(data.markerColor),
     },
   );
 

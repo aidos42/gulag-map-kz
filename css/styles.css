@@ -53,12 +53,32 @@ header {
   }
 }
 
-h1 {
+.main-page-title {
   text-align: center;
   color: #cccccc;
   margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: solid 1px #cccccc;
+}
+
+.section-title {
+  color: #cccccc;
+  padding: 0px 0px 0px 10px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+.marker-image {
+  padding: 0px 0px 10px 10px;
+}
+
+.marker-description {
+  color: #cccccc;
+  padding: 0px 0px 10px 10px;
 }
 
 #map-canvas {
