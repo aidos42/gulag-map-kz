@@ -6,7 +6,8 @@ const INITIAL_COORDS = {
   lat: 49.678323049774,
   lng: 72.68178662327088,
 };
-const MAP_ZOOM = 10;
+const MAP_ZOOM = 6;
+const DATA_URL = 'https://mongo-gulag-map-kz-production.up.railway.app/api/camps';
 
 const getCampMarkerIcon = (color) => L.icon({
   iconUrl:
@@ -19,15 +20,34 @@ const getCampMarkerIcon = (color) => L.icon({
   shadowSize: [41, 41],
 });
 
-// TODO: Заменить на полноценные данные.
-const karlag = {
-  location: INITIAL_COORDS,
-  title: 'Карлаг',
-  region: 'Карагандинская область',
-  opened: '1931 г.',
-  closed: '1959 г.',
-  link: 'https://lib.memo.ru/rubric/957',
-  markerColor: 'violet',
+const getData = async (url) => {
+  let data = [
+    {
+      id: 'karlag',
+      location: {
+        lat: 49.678323049774,
+        lng: 72.68178662327088,
+      },
+      title: 'Карагандинский ИТЛ  (Карлаг)',
+      region: 'Карагандинская область, с. Долинское (Долинка)',
+      opened: '17.09.1931',
+      closed: '01.01.1959',
+      memorial: 'https://lib.memo.ru/rubric/957',
+      markerColor: 'violet',
+      archives: 'В архиве  Управление Комитета по правовой статистике и специальным учетам Генеральной Прокуратуры РК  Карагандинской обл., ГАКО',
+    },
+  ];
+
+  try {
+    const response = await fetch(url);
+    data = response.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+
+  return data;
 };
 
 const map = L.map('map-canvas');
@@ -57,6 +77,11 @@ const createCardMarker = async (data) => {
   L.geoJson(kazakhstanMap).addTo(map);
 };
 
+const createCardMarkers = async (url) => {
+  const data = await getData(url);
+  data.forEach((camp) => createCardMarker(camp).catch((error) => console.log(error)));
+};
+
 const loadMap = () => {
   map.on('load').setView(INITIAL_COORDS, MAP_ZOOM);
 
@@ -66,6 +91,6 @@ const loadMap = () => {
   }).addTo(map);
 };
 
-createCardMarker(karlag).catch((error) => console.log(error));
+createCardMarkers(DATA_URL);
 
 export default loadMap;
