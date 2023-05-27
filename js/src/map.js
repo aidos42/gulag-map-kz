@@ -8,6 +8,7 @@ const INITIAL_COORDS = {
 };
 const MAP_ZOOM = 6;
 const DATA_URL = 'https://mongo-gulag-map-kz-production.up.railway.app/api/camps';
+const KAZAKHSTAN_MAP = './js/src/kazakhstan.json';
 
 const getCampMarkerIcon = (color) => L.icon({
   iconUrl:
@@ -50,6 +51,13 @@ const getData = async (url) => {
   return data;
 };
 
+const addCountryLayer = async (country, globalMap) => {
+  const response = await fetch(country);
+  const countryMap = await response.json();
+
+  L.geoJson(countryMap).addTo(globalMap);
+};
+
 const map = L.map('map-canvas');
 
 const campMarkersGroup = L.layerGroup().addTo(map);
@@ -62,9 +70,6 @@ const createCardMarker = async (data) => {
     },
   );
 
-  const response = await fetch('./js/src/kazakhstan.json');
-  const kazakhstanMap = await response.json();
-
   campMarker
     .addTo(campMarkersGroup)
     .bindPopup(
@@ -73,8 +78,6 @@ const createCardMarker = async (data) => {
         keepInView: true,
       },
     );
-
-  L.geoJson(kazakhstanMap).addTo(map);
 };
 
 const createCardMarkers = async (url) => {
@@ -92,6 +95,7 @@ const loadMap = () => {
   }).addTo(map);
 };
 
+addCountryLayer(KAZAKHSTAN_MAP, map).catch((error) => console.log(error));
 createCardMarkers(DATA_URL).catch((error) => console.log(error));
 
 export default loadMap;
