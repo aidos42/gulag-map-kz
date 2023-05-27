@@ -141,10 +141,6 @@ header {
   padding: 10px;
 }
 
-.table-year {
-  font-weight: bold;
-}
-
-th, td {
+.camp-table-cell {
   border: 1px solid #a2a9b1;
 }
