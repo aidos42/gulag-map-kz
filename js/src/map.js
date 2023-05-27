@@ -79,7 +79,8 @@ const createCardMarker = async (data) => {
 
 const createCardMarkers = async (url) => {
   const data = await getData(url);
-  data.forEach((camp) => createCardMarker(camp).catch((error) => console.log(error)));
+  const promises = data.map((camp) => createCardMarker(camp));
+  await Promise.all(promises);
 };
 
 const loadMap = () => {
@@ -91,6 +92,6 @@ const loadMap = () => {
   }).addTo(map);
 };
 
-createCardMarkers(DATA_URL);
+createCardMarkers(DATA_URL).catch((error) => console.log(error));
 
 export default loadMap;
