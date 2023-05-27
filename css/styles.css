@@ -61,7 +61,7 @@ header {
   border-bottom: solid 1px #cccccc;
 }
 
-.section-title {
+.section-title, .camp-title {
   color: #cccccc;
   padding: 0px 0px 0px 10px;
 }
@@ -131,4 +131,20 @@ header {
 .source, .source-title {
   padding: 10px;
   color: #cccccc;
+}
+
+.camp-article {
+  color: #cccccc;
+}
+
+.camp-details {
+  padding: 10px;
+}
+
+.table-year {
+  font-weight: bold;
+}
+
+th, td {
+  border: 1px solid #a2a9b1;
 }
